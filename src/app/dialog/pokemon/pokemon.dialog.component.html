@@ -1,0 +1,22 @@
+
+<mat-card class="example-card">
+  <mat-card-header >
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title  >Pokemon {{pokemonData.name}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="pokemonData.sprites.front_default" class="card-img-top" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h4 class="title">Abilities</h4>
+    <div class="pokemon-info">
+    <p *ngFor="let type of pokemonData.abilities" class="pokemon">
+      {{type.ability.name}}
+    </p>
+    </div>
+    <h4 class="title">Descripción</h4>
+    <div class="pokemon-info">
+      <p  class="pokemon">
+        {{ pokemonInfo.flavor_text_entries[26].flavor_text}}
+      </p>
+      </div>
+  </mat-card-content>
+</mat-card>

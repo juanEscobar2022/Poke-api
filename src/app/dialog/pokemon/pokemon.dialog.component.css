@@ -1,0 +1,44 @@
+/* .example-card {
+    max-width: 400px;
+    #cfcfcf
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  } */
+  .card-img-top {
+    display: block; 
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 8rem; 
+    background-size: cover;
+
+  }
+  .pokemon {
+    display: inline-block; 
+    padding: 20px;
+    filter: drop-shadow(2px 4px 15px black);
+    color: dimgrey;
+    font-weight: bold; 
+  
+  }
+  .pokemon-info {
+    text-align: center;
+  }
+  .title{
+    align-items: center;
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold; 
+    text-transform: uppercase;
+  }
+  mat-card-title {
+    padding: 10px;
+    margin-top: 12px;
+    margin-left: 100px 
+  }
+  .example-card {
+    /* max-width: 400px; */
+    background-color: #e7ecf7;
+  }

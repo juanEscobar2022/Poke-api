@@ -1,0 +1,87 @@
+<div style="background-color:#d9dfe1 ;">
+
+<nav class="navbar navbar-expand-lg">
+  <img src="assets/img/pokemon.jpg" alt="" class="pikachu">
+
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+    
+    <a class="nav-link active" href="#"><button type="button" class="btn btn-light" (click)="filterByType('all')" style="border-radius: 20px;filter: drop-shadow(2px 4px 6px black);" >Ver todos</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button type="button" class="btn normal" (click)="filterByType('normal') ">Normal</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link"><button type="button" class="btn water" (click)="filterByType('water')">Agua</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn fire" (click)="filterByType('fire')">Fuego</button> </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn grass" (click)="filterByType('grass')">Hierba</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn electric" (click)="filterByType('electric')">Electrico</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn ice" (click)="filterByType('ice')">Hielo</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn fighting" (click)="filterByType('fighting')">Lucha</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn poison" (click)="filterByType('poison')">Veneno</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn ground" (click)="filterByType('ground')">Tierra</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn flying" (click)="filterByType('flying')">Volador</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn psychic" (click)="filterByType('psychic')">Psíquico</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn bug" (click)="filterByType('bug')">Insecto</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn rock" (click)="filterByType('rock')">Roca</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn ghost" (click)="filterByType('ghost')">Fantasma</button></a>
+        </li>
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn oscuro" (click)="filterByType('dark')">Siniestro</button></a>
+        </li> -->
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn dragon" (click)="filterByType('dragon')">Dragon</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn steel" (click)="filterByType('steel')">Acero</button></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><button class="btn fairy" (click)="filterByType('fairy')">Hada</button></a>
+        </li>
+       
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+<!-- </div> -->
+<!-- <div *ngFor="let pokemon of filteredPokemon">
+  <h2>{{ pokemon.name }}</h2>
+  <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+</div> -->
+
+<div class="container">
+ 
+  <app-pokemon-list ></app-pokemon-list>
+<!-- </div> -->
+<!-- <app-footer></app-footer> -->
+</div>
+</div>

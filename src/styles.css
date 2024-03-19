@@ -1,1 +1,141 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.normal{
+    background-color: #faa2c7;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+.water{
+    background-color: #3e6dee;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+.fighting{
+    background-color: #bb3d47;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.fire{
+    background-color: #ff5722;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+  }
+  .grass{
+    background-color: #1e7a3a;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .electric{
+    background-color: #ebd517;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .ice{
+    background-color: #17baeb;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .poison{
+    background-color: #660d7c;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .ground{
+    background-color: #ad7330;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .flying{
+    background-color: #af66af;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .psychic{
+    background-color: #eb4949;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .bug{
+    background-color: #70bd6d;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .rock{
+    background-color: #523d1d;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .ghost{
+    background-color: #5f355f;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .oscuro{
+    background-color: #38260f;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .dragon{
+    background-color: #4b4dc7;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }
+  .steel{
+    background-color: #888586;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+  }
+  .fairy{
+    background-color: #ec76d3;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 6px black);
+
+
+  }

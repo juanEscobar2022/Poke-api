@@ -1,0 +1,53 @@
+<div class="card-container mt-5">
+  <!-- Mostrar todos los Pokémon -->
+  <div *ngIf="!showFilteredPokemon">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of pokemonData; let i = index">
+        <div class="card mb-3">
+          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}" (click)="openDialog(i)">
+          <div class="card-body">
+            <p># {{i + 1}}</p>
+            <h5 class="title">{{item.name}}</h5>
+            <div *ngIf="item.types">
+              <ul>
+                <li *ngFor="let type of item.types"  [ngClass]="type.type.name">
+                  {{ type.type.name }}
+                </li>
+              </ul>
+            </div>
+            <div class="pokemon-info">
+              <p class="pokemon-height">{{ item.height }}M</p>
+              <p class="pokemon-weight">{{ item.weight }}KG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Mostrar Pokémon filtrados -->
+  <div *ngIf="showFilteredPokemon">
+   
+    <div class="row mt-4" [ngStyle]="stylePk ? width : null">
+      <div class="col-md-4" *ngFor="let item of filteredPokemon; let i = index">
+        <div class="card mb-3">
+          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}">
+          <div class="card-body">
+            <p># {{i + 1}}</p>
+            <h5 class="title">{{item.name}}</h5>
+            <div *ngIf="item.types">
+              <ul>
+                <li *ngFor="let type of item.types"  [ngClass]="type.type.name">
+                  {{ type.type.name }}
+                </li>
+              </ul>
+            </div>
+            <div class="pokemon-info">
+              <p class="pokemon-height">{{ item.height }}M</p>
+              <p class="pokemon-weight">{{ item.weight }}KG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
