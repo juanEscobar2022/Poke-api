@@ -12,6 +12,11 @@ Filtrado por Tipo: La aplicación permite a los usuarios filtrar los Pokémon po
 Detalles del Pokémon: Al hacer clic en un Pokémon de la lista, los usuarios pueden ver detalles adicionales sobre el Pokémon, incluyendo su imagen, tipo(s), altura, peso y otras estadísticas relevantes.
 Interfaz de Usuario Intuitiva: La interfaz de usuario limpia y amigable hace que sea fácil para los usuarios navegar y encontrar la información que están buscando.
 
+# Clonar Proyecto
+
+https://github.com/juanEscobar2022/Poke-api.git
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
