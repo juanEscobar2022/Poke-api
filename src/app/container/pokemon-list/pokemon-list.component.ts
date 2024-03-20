@@ -1,6 +1,6 @@
 import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { PokemonService } from '../../service/pokemon.service';
-import { PokemonResult } from '../../interface/pokemon.interface';
+import { PokemonApiResponse, PokemonResult } from '../../interface/pokemon.interface';
 import { CommonModule } from '@angular/common';
 import { catchError, of, tap } from 'rxjs';
 import { PokemonImageService } from '../../service/pokemonImg.service';
@@ -31,6 +31,7 @@ export class PokemonListComponent implements OnInit{
   datauser:any = [];
 
   pokemonData: any[] = [];
+  // pokemonData: PokemonApiResponse[] =[];
   filteredPokemon: any[] = [];
   showFilteredPokemon: boolean = false;
 
