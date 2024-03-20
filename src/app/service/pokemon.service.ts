@@ -22,7 +22,15 @@ export class PokemonService {
     return this.http.get<PokemonApiResponse>(API_CONFIG.baseUrl + 'pokemon/?limit=150');
   }
   
+prueba(numero:number){
+  // return this.http.get(API_CONFIG.baseUrl+`pokemon/?limit=${numero}`)
+  const requests = [];
+  for (let i = 1; i <= numero; i++) {
+      requests.push(this.http.get(API_CONFIG.baseUrl+`pokemon/${i}`));
+    }
+    return forkJoin(requests);
 
+}
   getAllPokemon(): Observable<any> {
     const requests = [];
     for (let i = 1; i <= 151; i++) {
@@ -30,6 +38,21 @@ export class PokemonService {
     }
     return forkJoin(requests);
   }
+
+  // getAllPokemon(page: number): Observable<any> {
+  //   // Calcular el rango de Pokémon para la página solicitada
+  //   const start = (page - 1) * 20 + 1;
+  //   const end = page * 20;
+
+  //   // Crear solicitudes HTTP para los Pokémon dentro del rango
+  //   const requests = [];
+  //   for (let i = start; i <= end; i++) {
+  //     requests.push(this.http.get(API_CONFIG.baseUrl + `pokemon/${i}`));
+  //   }
+
+  //   // Combinar todas las solicitudes en una sola
+  //   return forkJoin(requests);
+  // }
 
   getPokemonByType(type: string): Observable<any[]> {
     return this.getAllPokemon().pipe(
@@ -41,7 +64,7 @@ export class PokemonService {
     );
   }
   getPokemonId(id: number) {
-    return this.http.get(API_CONFIG.baseUrl + `pokemon/${id+1}`).pipe(
+    return this.http.get(API_CONFIG.baseUrl + `pokemon/${id}`).pipe(
       catchError(error => {
         console.error('Error fetching Pokemon by ID:', error);
         return throwError('Could not fetch Pokemon by ID. Please try again later.');
@@ -49,7 +72,7 @@ export class PokemonService {
     );
   }
   getPokemonInfo(id: number) {
-    return this.http.get(API_CONFIG.info + `${id+1}`).pipe(
+    return this.http.get(API_CONFIG.info + `${id}`).pipe(
       catchError(error => {
         console.error('Error fetching Pokemon by ID:', error);
         return throwError('Could not fetch Pokemon by ID. Please try again later.');

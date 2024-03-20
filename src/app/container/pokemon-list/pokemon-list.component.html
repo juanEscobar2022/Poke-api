@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-md-4" *ngFor="let item of pokemonData; let i = index">
         <div class="card mb-3">
-          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}" (click)="openDialog(i)">
+          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}" (click)="openDialog(item.id)">
           <div class="card-body">
-            <p># {{i + 1}}</p>
+            <p># {{item.id}}</p>
             <h5 class="title">{{item.name}}</h5>
             <div *ngIf="item.types">
               <ul>
@@ -22,6 +22,11 @@
           </div>
         </div>
       </div>
+      <mat-paginator [length]="151"
+      [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        (page)="getPrueba($event)">
+     </mat-paginator>
     </div>
   </div>
   <!-- Mostrar Pokémon filtrados -->
@@ -30,9 +35,9 @@
     <div class="row mt-4" [ngStyle]="stylePk ? width : null">
       <div class="col-md-4" *ngFor="let item of filteredPokemon; let i = index">
         <div class="card mb-3">
-          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}">
+          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}" (click)="openDialog(item.id)">
           <div class="card-body">
-            <p># {{i + 1}}</p>
+            <p># {{item.id}}</p>
             <h5 class="title">{{item.name}}</h5>
             <div *ngIf="item.types">
               <ul>
