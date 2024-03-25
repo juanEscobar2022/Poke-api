@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { PokemonImgComponent } from './pokemonImg/pokemonImg.component';
 
 
 
@@ -33,7 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     
   ],
-  declarations: [ContainerComponent, PokemonListComponent],
+  declarations: [ContainerComponent, PokemonListComponent, PokemonImgComponent],
   exports:[ContainerComponent]
 })
 export class ContainerModule { }

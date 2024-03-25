@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 .normal{
@@ -139,3 +141,17 @@
 
 
   }
+
+  img{
+    transition: all 0.8s ease;
+  }
+  img:hover{
+    transition: all 0.8s ease;
+    filter: brightness(150%);    
+    
+  }
+  .viewImg{
+    padding: 1px;
+    width: 10%;
+    display: contents;
+    }

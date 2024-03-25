@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './container/container.component';
+import { PokemonImgComponent } from './container/pokemonImg/pokemonImg.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
       title: "Login Page",
     },
   },
+  
 
 ];
 

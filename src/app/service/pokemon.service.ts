@@ -4,7 +4,7 @@ import { API_CONFIG } from '../config/api.config';
 // import { Pokemon } from '../interface/pokemon.interface';
 // import { Pokemon } from '../../interface/pokemon.interface';
 
-import { Observable, catchError, forkJoin, map, of, throwError } from 'rxjs';
+import { Observable, Subject, catchError, forkJoin, map, of, throwError } from 'rxjs';
 import {  PokemonApiResponse, PokemonResult } from '../interface/pokemon.interface';
 // import { Pokemon } from 
 
@@ -12,6 +12,7 @@ import {  PokemonApiResponse, PokemonResult } from '../interface/pokemon.interfa
   providedIn: 'root'
 })
 export class PokemonService {
+  pokemonClicked: Subject<number> = new Subject<number>();
 
   constructor(
     private http: HttpClient
@@ -78,5 +79,8 @@ prueba(numero:number){
         return throwError('Could not fetch Pokemon by ID. Please try again later.');
       })
     );
+  }
+  emitPokemonClicked(pokemonId: number): void {
+    this.pokemonClicked.next(pokemonId);
   }
 }

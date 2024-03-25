@@ -10,11 +10,13 @@ import { RouterModule } from '@angular/router';
 import { ContainerModule } from './container/container.module';
 import { PokemonDialog } from './dialog/pokemon/pokemon.dialog.component';
 import { MatCardModule } from '@angular/material/card';
+import { PokemonImgComponent } from './container/pokemonImg/pokemonImg.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonDialog
+    PokemonDialog,
+    // PokemonImgComponent
   ],
   imports: [
     CommonModule,

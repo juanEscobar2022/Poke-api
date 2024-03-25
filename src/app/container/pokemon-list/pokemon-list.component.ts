@@ -1,10 +1,7 @@
-import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { PokemonService } from '../../service/pokemon.service';
-import { PokemonApiResponse, PokemonResult } from '../../interface/pokemon.interface';
-import { CommonModule } from '@angular/common';
-import { catchError, of, tap } from 'rxjs';
+import {  PokemonResult } from '../../interface/pokemon.interface';
 import { PokemonImageService } from '../../service/pokemonImg.service';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { PokemonFilterService } from '../../service/pokemonFilter.service';
@@ -15,12 +12,10 @@ import {
   MatDialogContent,
 } from '@angular/material/dialog';
 import { PokemonDialog } from '../../dialog/pokemon/pokemon.dialog.component';
-// import { PokemonDialog } from '../../dialog/pokemon/pokemon.dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
-  // standalone: true,
-  // imports: [CommonModule],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css'
 })
@@ -31,7 +26,6 @@ export class PokemonListComponent implements OnInit{
   datauser:any = [];
 
   pokemonData: any[] = [];
-  // pokemonData: PokemonApiResponse[] =[];
   filteredPokemon: any[] = [];
   showFilteredPokemon: boolean = false;
 
@@ -44,29 +38,24 @@ export class PokemonListComponent implements OnInit{
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
-  // @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
+
 
   constructor(
     private apiPokemon: PokemonService,
     private pokemonImageService: PokemonImageService,
     private pokemonFilterService: PokemonFilterService,
+    private router: Router,
     public dialog: MatDialog,
 
   ){
 
   }
-  // pokemon?: Pokemon;
   pokemonList: PokemonResult[] = [];
 
   ngOnInit(): void {
     this.loadAllPokemon();
     this.subscribeToTypeChanges();
-    
-    // this.getPrueba(this.pageSize);
-    // this.updatePaginatedPokemon()
-    
-    // this.paginator.pageSize = this.pageSize;
-    
+        
   }
   
 
@@ -74,7 +63,6 @@ export class PokemonListComponent implements OnInit{
     this.apiPokemon.getAllPokemon().subscribe(
       (pokemonData: any[]) => {
         this.pokemonData = pokemonData;
-        console.log(this.pokemonData.length);
         
         this.paginateData();
             },
@@ -117,7 +105,9 @@ export class PokemonListComponent implements OnInit{
       }
     });
   }
+  img:boolean = false;
   openDialog(idSel:number): void {
+    this.img = true;
     const dialogRef = this.dialog.open(PokemonDialog, {
       width: '500px', 
       data: {idSel}, 
@@ -128,19 +118,6 @@ export class PokemonListComponent implements OnInit{
       console.log('El diálogo ha sido cerrado', result);
     });
   }
-  // onPageChange(event: any) {
-  //   // Calcula el índice inicial y final de los datos a mostrar en la página actual
-  //   const startIndex = event.pageIndex * event.pageSize;
-  //   const endIndex = startIndex + event.pageSize;
-  //   // Asigna los datos a mostrar en la página actual
-  //   this.displayedPokemon = this.pokemonData.slice(startIndex, endIndex);
-  // }
-
-  // updatePaginatedPokemon() {
-  //   const startIndex = (this.currentPage - 1) * this.pageSize;
-  //   const endIndex = Math.min(startIndex + this.pageSize, this.pokemonData.length);
-  //   this.paginatedPokemonData = this.pokemonData.slice(startIndex, endIndex);
-  // }
   paginateData() {
     this.paginator.pageSize = this.pageSize;
     this.paginator.pageIndex = 0;
@@ -150,18 +127,20 @@ export class PokemonListComponent implements OnInit{
       length: this.pokemonData.length
     });
   }
-  getPrueba(index:any){
-    console.log(index);
-    // window.location.reload()
+  getPaginate(index:any){
     this.apiPokemon.prueba(index.pageSize
       ).subscribe(
       data => {
         this.pokemonData = data;
         
-        // console.log(data);
-        
       }
     )
   }
+  idIMG?: any
+  pokemonImg(event:any){
+    this.idIMG = event;
+    
+  }
+  
   }
 

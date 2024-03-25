@@ -1,11 +1,17 @@
+
+<app-pokemonImg [data]="idIMG"></app-pokemonImg>  
+
 <div class="card-container mt-5">
   <!-- Mostrar todos los Pokémon -->
   <div *ngIf="!showFilteredPokemon">
     <div class="row">
       <div class="col-md-4" *ngFor="let item of pokemonData; let i = index">
+
         <div class="card mb-3">
-          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}" (click)="openDialog(item.id)">
-          <div class="card-body">
+          <img mat-card-image [src]="item.sprites.front_default" class="card-img-top" alt="{{ item.name }}" >
+          <button (click)="pokemonImg(item.sprites.front_default)" class="btn btn-ghost-secondary viewImg"><i class="bi bi-eye-fill"></i></button>
+
+          <div class="card-body" >
             <p># {{item.id}}</p>
             <h5 class="title">{{item.name}}</h5>
             <div *ngIf="item.types">
@@ -16,6 +22,7 @@
               </ul>
             </div>
             <div class="pokemon-info">
+              <button (click)="openDialog(item.id)" class="btn btn-outline-primary" title="Descripción"><i class="bi bi-eye-fill"></i></button>
               <p class="pokemon-height">{{ item.height }}M</p>
               <p class="pokemon-weight">{{ item.weight }}KG</p>
             </div>
@@ -25,11 +32,13 @@
       <mat-paginator [length]="151"
       [pageSize]="10"
         [pageSizeOptions]="[5, 10, 25, 100]"
-        (page)="getPrueba($event)">
+        (page)="getPaginate($event)">
      </mat-paginator>
     </div>
   </div>
   <!-- Mostrar Pokémon filtrados -->
+  
+
   <div *ngIf="showFilteredPokemon">
    
     <div class="row mt-4" [ngStyle]="stylePk ? width : null">

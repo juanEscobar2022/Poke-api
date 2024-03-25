@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist\\poke-front",
+    "public": "dist/poke-front/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
